@@ -1,0 +1,21 @@
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Product List</h4>
+      <table>
+          <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Categories</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+          <tr  *ngFor="let product of products; let i = index">
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.category}}</td>
+              <td><a href="#" routerLink="/products/{{product._id}}">Edit</a></td>
+              <td><a href="#" (click)="deleteProducts(product._id)">Delete</a></td>
+          </tr>
+      </table>
+    </div>
+  </div>

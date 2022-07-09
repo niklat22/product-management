@@ -1,0 +1,42 @@
+<div style="width: 500px; margin: auto;">
+    <div>
+      <div *ngIf="!submitted">
+        <div>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            required
+            [(ngModel)]="product.name"
+            name="name"
+          />
+        </div>
+  
+        <div>
+          <label for="price">Price</label>
+          <input
+            id="price"
+            required
+            [(ngModel)]="product.price"
+            name="price"
+          />
+        </div>
+
+        <div>
+          <label for="description">Categories</label>
+          <div *ngFor="let item of product.categories; index as i">
+            <input
+            [checked]="item[i]" id="userConsent" type="checkbox"
+            />
+          </div>
+        </div>
+  
+        <button (click)="createProduct()">Create</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h3>You successfully created a product!</h3>
+        <button (click)="newProduct()">New..</button>
+      </div>
+    </div>
+  </div>
